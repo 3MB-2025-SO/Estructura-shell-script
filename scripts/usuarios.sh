@@ -4,7 +4,7 @@ function crearUsuario(){
 
     grep -q $usuario /etc/passwd
     if [ $? -eq 0 ]; then
-        echo "El usuario $usuario ya existe."
+        mensajeRojo "El usuario $usuario ya existe."
     else
         useradd -m -g wheel $usuario
     fi
